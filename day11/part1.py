@@ -24,7 +24,7 @@ def blink(pebbles):
 
 def main():
     print("concerning the plutonian pebbles...")
-    inputfile = open("puzzle_input", "r")
+    inputfile = open("simple_input2", "r")
 
     for line in inputfile:
         a = line
@@ -40,13 +40,16 @@ def main():
 
     print(f"starting : {pebbles}")
 
-    for i in range(25):
+    last=0
+    for i in range(75):
         pebbles = blink(pebbles)
-        print(pebbles)
-        print(len(pebbles))
+        if i < 10:
+            print(pebbles)
+        print(f"num pebbles: {len(pebbles)} i:{i} new_pebs: {len(pebbles)-last}")
+        last=len(pebbles)
 
 
-    print(f"final : {pebbles}")
+    #print(f"final : {pebbles}")
     print(f"len : {len(pebbles)}")
 
 main()
